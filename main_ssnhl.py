@@ -58,13 +58,12 @@ if __name__ == '__main__':
   parser = argparse.ArgumentParser()
   parser.add_argument(
       '--data_name',
-      choices=['letter','spam'],
-      default='spam',
+      default='SSNHL',
       type=str)
   parser.add_argument(
       '--miss_rate',
       help='missing data probability',
-      default=0.2,
+      default=0.1,
       type=float)
   parser.add_argument(
       '--batch_size',
@@ -91,3 +90,5 @@ if __name__ == '__main__':
   
   # Calls main function  
   imputed_data, rmse = main(args)
+
+  np.savetxt("imputation.txt", imputed_data, fmt='%d', delimiter=' ')
