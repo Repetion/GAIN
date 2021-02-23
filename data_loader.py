@@ -35,6 +35,7 @@ def data_loader (data_name, miss_rate):
 
   # Parameters
   no, dim = data_x.shape
+  print(no, dim)
   
   # Introduce missing data
   data_m = binary_sampler(1-miss_rate, no, dim)
